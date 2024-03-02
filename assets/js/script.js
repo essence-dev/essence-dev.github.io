@@ -1,5 +1,10 @@
 'use strict';
 
+var notification = document.getElementById('notification');
+
+notification.style.cssText += '-webkit-transition: all 1.5s';
+notification.style.cssText += '-o-transition: all 1.5s';
+notification.style.cssText += 'transition: all 1.5s';
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -22,13 +27,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (status === 0 || (status >= 200 && status < 400)) {
 
-          var notification = document.getElementById('notification');
-
           notification.style.visibility = 'visible';
 
           notification.style.opacity = '1';
           notification.style.bottom = '30px';
-
+          
           setTimeout(function() {
 
             notification.style.opacity = '0';
