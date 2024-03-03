@@ -105,7 +105,7 @@
             <div class="contact-info">
               <p class="contact-title">Местонахождение</p>
 
-              <address>Россия, Москва</address>
+              <a href="https://maps.app.goo.gl/KsfzX8vmxm8GeJGs9" class="contact-link">Россия, Москва</a>
             </div>
 
           </li>
@@ -197,20 +197,18 @@
         </header>
 
         <section class="about-text">
-          <span>
-            ⭐ Middle-Developer.
+
+          <span class="about-text-main">
+            <span class="title">⭐ Middle-Developer.</span> <br>
+            <span class="title">🧭 Ваш проводник в пространстве IT.</span>
           </span>
 
           <span>
-            🧭 Ваш проводник в пространстве IT.
+            🌐 Адаптивные интерфейсы
           </span>
 
           <span>
-            🖥️ Адаптивные веб-сайты
-          </span>
-
-          <span>
-            🖥️ Умные боты
+            ⚙️ Монолитные механизмы
           </span>
 
           <span>
@@ -222,11 +220,11 @@
           </span>
 
           <span>
-            🔎 Стремление к совершенству
+            🏆 Стремление к совершенству
           </span>
 
           <span>
-            🛠️ Доступность в работе
+            🛠️ Доступное пользование
           </span>
 
           <span>
@@ -242,7 +240,7 @@
           </span>
 
           <span>
-            🧠 Интеллектуальное обогащение
+            🧠 Интеллектуальные системы
           </span>
 
           <span>
@@ -770,23 +768,23 @@
           <ul class="filter-list">
 
             <li class="filter-item">
-              <button class="active" data-filter-btn>Все</button>
+              <button class="filter-button active" data-filter-btn>Все</button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Веб-разработка</button>
+              <button class="filter-button" data-filter-btn>Веб-разработка</button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Веб-дизайн</button>
+              <button class="filter-button" data-filter-btn>Веб-дизайн</button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Программы</button>
+              <button class="filter-button" data-filter-btn>Программы</button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Боты</button>
+              <button class="filter-button" data-filter-btn>Боты</button>
             </li>
 
           </ul>
@@ -804,6 +802,10 @@
             </button>
 
             <ul class="select-list">
+
+              <li class="filter-item">
+                <button data-filter-btn>Все</button>
+              </li>
 
               <li class="filter-item">
                 <button data-filter-btn>Веб-разработка</button>
@@ -1224,8 +1226,10 @@
             <textarea name="entry.1455277629" class="form-input" placeholder="Опишите своё предложение.." required data-form-input></textarea>
 
             <button class="form-btn" type="submit" data-form-btn>
-              <ion-icon name="mail-outline"></ion-icon>
-              <span>Отправить</span>
+              <div class="form-btn-content">
+                <ion-icon name="mail-outline"></ion-icon>
+                <span>Отправить</span>
+              </div>
             </button>
 
           </form>

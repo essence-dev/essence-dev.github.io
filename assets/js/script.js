@@ -1,5 +1,35 @@
 'use strict';
 
+function CreateRequest()
+{
+    var Request = false;
+
+    if (window.XMLHttpRequest)
+    {
+        //Gecko-совместимые браузеры, Safari, Konqueror
+        Request = new XMLHttpRequest();
+    }
+    else if (window.ActiveXObject)
+    {
+        //Internet explorer
+        try
+        {
+             Request = new ActiveXObject("Microsoft.XMLHTTP");
+        }    
+        catch (CatchException)
+        {
+             Request = new ActiveXObject("Msxml2.XMLHTTP");
+        }
+    }
+ 
+    if (!Request)
+    {
+        alert("Невозможно создать XMLHttpRequest");
+    }
+    
+    return Request;
+} 
+
 var notification = document.getElementById('notification');
 
 notification.style.cssText += '-webkit-transition: all 1.5s';
@@ -15,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
     event.preventDefault();
 
     var formData = new FormData(form);
-    var request = new XMLHttpRequest();
+    var request = CreateRequest();
 
     request.open('POST', form.action, true);
 
@@ -146,6 +176,8 @@ const filterFunc = function (selectedValue) {
       filterItems[i].classList.remove("active");
     }
 
+    elementToggleFunc(select);
+
   }
 
 }
@@ -170,28 +202,6 @@ for (let i = 0; i < filterBtn.length; i++) {
 }
 
 
-
-// contact form variables
-const form = document.querySelector("[data-form]");
-const formInputs = document.querySelectorAll("[data-form-input]");
-const formBtn = document.querySelector("[data-form-btn]");
-
-// add event to all form input field
-for (let i = 0; i < formInputs.length; i++) {
-  formInputs[i].addEventListener("input", function () {
-
-    // check form validation
-    if (form.checkValidity()) {
-      formBtn.removeAttribute("disabled");
-    } else {
-      formBtn.setAttribute("disabled", "");
-    }
-
-  });
-}
-
-
-
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
@@ -204,12 +214,13 @@ for (let i = 0; i < navigationLinks.length; i++) {
       if (this.innerHTML.normalize().toLowerCase() === pages[i].dataset.page.normalize().toLowerCase()) {
         pages[i].classList.add("active");
         navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
       } else {
         pages[i].classList.remove("active");
         navigationLinks[i].classList.remove("active");
       }
     }
+
+    window.scrollTo(-1, -1);
 
   });
 }
