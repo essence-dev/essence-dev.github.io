@@ -155,8 +155,11 @@ input, textarea {
 
 :focus { outline-color: var(--orange-yellow-crayola); }
 
-html { 
+html {
   font-family: var(--ff-poppins);
+}
+
+html, body { 
   overflow-x: hidden;
   scroll-behavior: smooth; 
 }
