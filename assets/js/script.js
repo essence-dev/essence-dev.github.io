@@ -1,5 +1,26 @@
 'use strict';
 
+const gifBox = document.getElementById('toggle-gif');
+const gifImage = document.getElementById('gif-img');
+const playPauseIcon = document.getElementById('play-pause-icon');
+
+let isGifPlaying = true;
+
+function toggleGifPlayback() 
+{
+  isGifPlaying = !isGifPlaying;
+  if (isGifPlaying) 
+  {
+    gifImage.src = './assets/images/my-avatar.gif';
+    playPauseIcon.setAttribute('name', 'pause-circle-outline');
+  } 
+  else 
+  {
+    gifImage.src = './assets/images/my-avatar-gif.png';
+    playPauseIcon.setAttribute('name', 'play-circle-outline');
+  }
+}
+
 function CreateRequest()
 {
     var Request = false;

@@ -20,9 +20,9 @@
   <!--
     - google font link
   -->
-  <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
-  <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -42,7 +42,7 @@
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Сергей 'Essence'" width="80">
+          <img class="avatar-img" src="./assets/images/my-avatar.png" alt="Сергей 'Essence'" width="80px">
         </figure>
 
         <div class="info-content">
@@ -54,9 +54,15 @@
           </div>
         </div>
 
+        <button class="gif-box" id="toogle-gif" onclick="toggleGifPlayback()">
+          <div class="project-item-icon-box">
+            <ion-icon name="pause-circle-outline" id="play-pause-icon"></ion-icon>
+          </div>
+          <img src='./assets/images/my-avatar.gif' id="gif-img" height="100%">
+        </button>
+
         <button class="info_more-btn" data-sidebar-btn>
           <span>Показать контакты</span>
-
           <ion-icon name="chevron-down"></ion-icon>
         </button>
 
@@ -105,7 +111,7 @@
             <div class="contact-info">
               <p class="contact-title">Местонахождение</p>
 
-              <a href="https://maps.app.goo.gl/KsfzX8vmxm8GeJGs9" class="contact-link">Россия, Москва</a>
+              <a href="https://maps.app.goo.gl/KsfzX8vmxm8GeJGs9" class="contact-link" target="_blank">Россия, Москва</a>
             </div>
 
           </li>
@@ -117,19 +123,19 @@
         <ul class="social-list">
 
           <li class="social-item">
-            <a href="https://t.me/shift_essence" class="social-link">
+            <a href="https://t.me/shift_essence" class="social-link" target="_blank">
               <ion-icon name="paper-plane"></ion-icon>
             </a>
           </li>
 
           <li class="social-item">
-            <a href="https://vk.com/shift_essence" class="social-link">
+            <a href="https://vk.com/shift_essence" class="social-link" target="_blank">
               <ion-icon name="logo-vk"></ion-icon>
             </a>
           </li>
 
           <li class="social-item">
-            <a href="https://api.whatsapp.com/send/?phone=79624206900" class="social-link">
+            <a href="https://api.whatsapp.com/send/?phone=79624206900" class="social-link" target="_blank">
               <ion-icon name="logo-whatsapp"></ion-icon>
             </a>
           </li>
